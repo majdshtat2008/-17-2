@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>مجد الدين ♥ بيسان</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="site-header">
+        <div class="lang-switch" aria-hidden="false">
+          <button id="lang-ar" class="lang-btn active">العربية</button>
+          <button id="lang-en" class="lang-btn">English</button>
+        </div>
+        <h1 id="logo" class="logo" data-i18n="logo">مجد الدين &amp; بيسان</h1>
+        <p id="tag" class="tag" data-i18n="tag">قصة صغيرة، حب كبير — منذ 17/2/2026</p>
+      </header>
+
+      <section class="hero">
+        <div class="photos">
+          <div class="photo-card">
+            <img id="img-majd" src="images/majd.jpg" alt="مجد الدين" onerror="useFallback(this,'مجد')">
+            <h3>مجد الدين</h3>
+          </div>
+          <div class="heart">❤</div>
+          <div class="photo-card">
+            <img id="img-bisan" src="images/bisan.jpg" alt="بيسان" onerror="useFallback(this,'بيسان')">
+            <h3>بيسان</h3>
+          </div>
+        </div>
+
+        <div class="meta">
+          <p class="meet-date"><span data-i18n="meet_label">تاريخ تعارفنا:</span> <strong id="meet-date" data-i18n="date">17 فبراير 2026</strong></p>
+          <p id="subtitle" class="subtitle" data-i18n="subtitle">لنا عالمنا الخاص — لحظات، أغانٍ، وابتسامات</p>
+          <div class="actions">
+            <button id="love-btn" class="btn" data-i18n="love_btn">رسالة حب مفاجئة ❤</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="playlist">
+        <h2 id="playlist-h2" data-i18n="playlist_h2">المغنين المفضلين</h2>
+        <ul class="singers">
+          <li id="singer-1" data-i18n="singer1">جدل</li>
+          <li id="singer-2" data-i18n="singer2">عمرو دياب</li>
+          <li id="singer-3" data-i18n="singer3">تامر عاشور</li>
+          <li id="singer-4" data-i18n="singer4">تامر حسني</li>
+          <li id="singer-5" data-i18n="singer5">رامي صبري</li>
+          <li id="singer-6" data-i18n="singer6">كايروكي</li>
+        </ul>
+      </section>
+
+      <section class="music" id="music-section">
+        <h2 id="music-h2" data-i18n="music_h2">مشغل الموسيقى</h2>
+        <p class="hint" data-i18n="music_hint">لو أردت تشغيل ملفات محلياً، ضع ملفات mp3 داخل مجلد <strong>audio/</strong> بأسماء مبسطة مثل: jadal.mp3, amr_diab.mp3, tamer_ashour.mp3</p>
+
+        <div class="player">
+          <audio id="audio" preload="none"></audio>
+          <div class="player-controls">
+            <button id="prev" class="ctrl-btn">⏮</button>
+            <button id="play" class="ctrl-btn">▶︎</button>
+            <button id="next" class="ctrl-btn">⏭</button>
+            <div class="progress-wrap">
+              <input id="progress" type="range" min="0" max="100" value="0">
+            </div>
+            <input id="volume" type="range" min="0" max="1" step="0.01" value="0.9">
+          </div>
+
+          <ul id="track-list" class="track-list">
+            <li data-src="audio/jadal.mp3">Jadal</li>
+            <li data-src="audio/amr_diab.mp3">Amr Diab</li>
+            <li data-src="audio/tamer_ashour.mp3">Tamer Ashour</li>
+            <li data-src="audio/tamer_hosny.mp3">Tamer Hosny</li>
+            <li data-src="audio/rami_sabry.mp3">Rami Sabry</li>
+            <li data-src="audio/cairokee.mp3">Cairokee</li>
+          </ul>
+          <div class="yt-area">
+            <label for="yt-link">تشغيل من يوتيوب — ألصق رابط فيديو أو اضغط بحث:</label>
+            <div class="yt-controls">
+              <input id="yt-link" placeholder="https://www.youtube.com/watch?v=...">
+              <button id="yt-load" class="ctrl-btn">تشغيل الرابط</button>
+            </div>
+            <div class="yt-searchs">
+              <button class="search-artist ctrl-btn" data-query="Jadal">ابحث عن Jadal</button>
+              <button class="search-artist ctrl-btn" data-query="Amr Diab">ابحث عن Amr Diab</button>
+              <button class="search-artist ctrl-btn" data-query="Tamer Ashour">ابحث عن Tamer Ashour</button>
+              <button class="search-artist ctrl-btn" data-query="Tamer Hosny">ابحث عن Tamer Hosny</button>
+              <button class="search-artist ctrl-btn" data-query="Rami Sabry">ابحث عن Rami Sabry</button>
+              <button class="search-artist ctrl-btn" data-query="Cairokee">ابحث عن Cairokee</button>
+            </div>
+
+            <div class="yt-player-wrap">
+              <iframe id="yt-player" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="notes">
+        <h2 id="notes-h2" data-i18n="notes_h2">ذكريات صغيرة</h2>
+        <p id="love-message" class="love-message" data-i18n="love_message_default">اضغط على زر رسالة حب لتظهر رسالة رومانسية لطيفة!</p>
+      </section>
+
+      <section id="message-section" class="message-section">
+        <h2 id="message-h2" data-i18n="message_h2">رسالتك الخاصة</h2>
+        <p class="hint" id="message-hint" data-i18n="message_hint">اكتب رسالة طويلة لصديقتك هنا، يمكن حفظها محلياً أو تنزيلها كملف نصي.</p>
+        <textarea id="long-message" placeholder="" aria-label="long message"></textarea>
+        <div class="message-controls">
+          <div class="left-controls">
+            <button id="save-msg" class="ctrl-btn" data-i18n="save_btn">حفظ</button>
+            <button id="clear-msg" class="ctrl-btn" data-i18n="clear_btn">مسح</button>
+            <button id="download-msg" class="ctrl-btn" data-i18n="download_btn">تنزيل</button>
+          </div>
+          <div class="right-controls">
+            <span id="msg-counter">0</span>
+            <span class="saved-note" id="saved-note" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p id="footer-text" data-i18n="footer">صُمم بحب من مجد إلى بيسان — رفيقة العمر</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
